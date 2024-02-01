@@ -1,5 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System.Net;
+
+Console.WriteLine("N de aumentos salariales.");
+
 
 int cedula = 0;
 Console.WriteLine("digite su cedula");
@@ -18,34 +20,61 @@ Console.WriteLine("2-tecnico");
 Console.WriteLine("3-profecional");
 tipo = int.Parse(Console.ReadLine());
 
-float salario = 0;
-float operario = 100;
-float tecnico = 200;
-float profecional = 300;
+int salarioordi = 0;
+int operario = 100;
+int tecnico = 200;
+int profecional = 300;
 
 if (tipo == 1)
 {
-    salario = operario;
+    salarioordi = operario;
 
 }
 else if (tipo == 2)
 {
-    salario = tecnico;
+    salarioordi = tecnico;
 
 
 }
 else if (tipo == 3)
 {
-    salario = profecional;
+    salarioordi = profecional;
 
 }
-Console.WriteLine("Su salario sera de", salario);
 
 
 int hora = 0;
 Console.WriteLine("digite las horas de trabajo");
 hora = int.Parse(Console.ReadLine());
 
+
+int salariohoras = 0;
+salariohoras = salarioordi * hora;
+Console.WriteLine("Su salario Ordinario sera de.....{0}", salarioordi);
+Console.WriteLine("El salario por horas es de......{0}",salariohoras);
+
+
+double aumento, salariobruto;
+int porcentaje;
+Console.WriteLine("Digite el porcentaje de aumento ");
+Console.WriteLine("Operacio 15%");
+Console.WriteLine("Tecnico 10%");
+Console.WriteLine("Tecnico 5%");
+porcentaje = int.Parse(Console.ReadLine());
+
+aumento = (salariohoras * porcentaje)/100;
+salariobruto = salariohoras + aumento;
+
+Console.WriteLine("Salario Bruto....{0}", salariohoras);
+Console.WriteLine("Aumento....{0}", aumento);
+Console.WriteLine("Total....{0}", salariobruto);
+
+
+double seguro = 9.17;
+double deduccion;
+deduccion = salariobruto - seguro;
+Console.WriteLine("El salario con la deduccion de CCSS es.....{0}", deduccion);
+Console.WriteLine("El salario neto es....{0}", deduccion);
 
 
 
